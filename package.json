@@ -1,0 +1,27 @@
+{
+  "name": "audio-visualizer",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexjkB/audio-visualizer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexjkB/audio-visualizer/issues"
+  },
+  "homepage": "https://github.com/AlexjkB/audio-visualizer#readme",
+  "description": "",
+  "dependencies": {
+    "three": "^0.179.1",
+    "wavesurfer.js": "^7.10.1"
+  },
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  }
+}
