@@ -18,25 +18,14 @@ button {
 </head>
 <body>
 
-<h1>Press Record to start recording 🎙️</h1>
-<p>
-  <a href="https://wavesurfer.xyz/docs/classes/plugins_record.RecordPlugin">Record plugin docs</a>
-</p>
-
 <button id="record">Record</button>
-<button id="pause" style="display: none">Pause</button>
 
 <select id="mic-select">
   <option value="" hidden="">Select mic</option>
 </select>
 
-<label><input type="checkbox" id="scrollingWaveform"> Scrolling waveform</label>
-<label><input type="checkbox" id="continuousWaveform" checked="checked"> Continuous waveform</label>
-
-<p id="progress">00:00</p>
 
 <div id="waveform"></div>
-<div id="recordings"></div>
 
 <script type="module" src="/audio-visualizer.e02fbd41.js"></script>
 
