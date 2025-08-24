@@ -3,6 +3,11 @@ import RecordPlugin from 'wavesurfer.js/dist/plugins/record.esm.js'
 
 let wavesurfer, record;
 
+const audioContext = new AudioContext();
+const analyser = audioContext.createAnalyser();
+analyser.fftSize = 1024;
+const dataArray = new Float32Array(analyser.frequencyBinCount);
+
 const createWaveSurfer = () => {
   if (wavesurfer) {
     wavesurfer.destroy();
@@ -22,11 +27,6 @@ const createWaveSurfer = () => {
   record = wavesurfer.registerPlugin(RecordPlugin.create());
   record.on('record-end', (blob) => {
     const recordedUrl = URL.createObjectURL(blob);
-
-    button.textContent = 'Play';
-    button.onclick = () => wavesurferInstance.playPause();
-    wavesurferInstance.on('pause', () => (button.textContent = 'Play'));
-    wavesurferInstance.on('play', () => (button.textContent = 'Pause'));
   });
 
 };
@@ -43,10 +43,9 @@ RecordPlugin.getAvailableAudioDevices().then((devices) => {
 
 const recButton = document.querySelector('#record');
 recButton.onclick = () => {
-  if (record.isRecording() || record.isPaused()) {
+  if (record.isRecording()) {
     record.stopRecording();
     recButton.textContent = 'Record';
-    pauseButton.style.display = 'none';
     return;
   }
 
@@ -57,9 +56,28 @@ recButton.onclick = () => {
   record.startRecording({ deviceId }).then(() => {
     recButton.textContent = 'Stop';
     recButton.disabled = false;
-    pauseButton.style.display = 'inline';
   });
 };
+
+const updateFrequencyData = () => {
+  analyser.getFloatFrequencyData(dataArray);
+  console.log(dataArray);
+  requestAnimationFrame(updateFrequencyData);
+};
+
+const connectMicToAnalyser = (stream) => {
+  const source = audioContext.createMediaStreamSource(stream);
+  source.connect(analyser);
+  analyser.connect(audioContext.destination);
+  updateFrequencyData();
+};
+
+navigator.mediaDevices.getUserMedia({ audio: true })
+  .then(connectMicToAnalyser)
+  .catch((err) => {
+    console.error('Error accessing microphone:', err);
+  });
+
 
 
 createWaveSurfer();

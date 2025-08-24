@@ -1200,7 +1200,7 @@
 95/home/kida/Documents/audio-visualizer/node_modules/three/src/extras/curves/CubicBezierCurve3.js1755645505940305328 0
 83/home/kida/Documents/audio-visualizer/node_modules/@swc/helpers/_/_get/package.json1755645712307906143 0
 94/home/kida/Documents/audio-visualizer/node_modules/three/src/extras/curves/CubicBezierCurve.js1755645505940305328 0
-46/home/kida/Documents/audio-visualizer/index.js1756049943471321942 0
+46/home/kida/Documents/audio-visualizer/index.js1756051191925211786 0
 89/home/kida/Documents/audio-visualizer/node_modules/caniuse-lite/data/features/datalist.js1755645712293905858 0
 94/home/kida/Documents/audio-visualizer/node_modules/three/src/extras/curves/CatmullRomCurve3.js1755645505929305057 0
 88/home/kida/Documents/audio-visualizer/node_modules/three/src/extras/curves/LineCurve3.js1755645505994306654 0
@@ -2116,7 +2116,7 @@
 94/home/kida/Documents/audio-visualizer/node_modules/@parcel/workers/lib/process/ProcessChild.js1755645711982899541 0
 78/home/kida/Documents/audio-visualizer/node_modules/@parcel/package-manager/lib1755645712279905574 1
 95/home/kida/Documents/audio-visualizer/node_modules/@msgpackr-extract/msgpackr-extract-linux-x641755645711506889864 1
-42/home/kida/Documents/audio-visualizer/dist1756049982369855068 1
+42/home/kida/Documents/audio-visualizer/dist1756051192022215276 1
 78/home/kida/Documents/audio-visualizer/node_modules/@parcel/transformer-postcss1755645711781895455 1
 89/home/kida/Documents/audio-visualizer/node_modules/@parcel/events/test/Disposable.test.js1755645712090901735 0
 69/home/kida/Documents/audio-visualizer/node_modules/msgpackr/unpack.js1755645711784895516 0
@@ -2644,7 +2644,7 @@
 79/home/kida/Documents/audio-visualizer/node_modules/type-fest/source/except.d.ts1755645711329886266 0
 98/home/kida/Documents/audio-visualizer/node_modules/caniuse-lite/data/features/wasm-multi-memory.js1755645712650913110 0
 97/home/kida/Documents/audio-visualizer/node_modules/@parcel/core/src/requests/AssetGraphRequest.js1755645712256905107 0
-71/home/kida/Documents/audio-visualizer/dist/audio-visualizer.e02fbd41.js1756049982322854431 0
+71/home/kida/Documents/audio-visualizer/dist/audio-visualizer.e02fbd41.js1756051192016215061 0
 60/home/kida/Documents/audio-visualizer/node_modules/type-fest1755645711333886347 1
 90/home/kida/Documents/audio-visualizer/node_modules/three/examples/jsm/loaders/3DMLoader.js1755645505898304296 0
 71/home/kida/Documents/audio-visualizer/dist/audio-visualizer.3464ddca.js1755741407599423576 0
@@ -4353,7 +4353,7 @@
 89/home/kida/Documents/audio-visualizer/node_modules/@parcel/transformer-babel/src/types.js1755645711852896898 0
 103/home/kida/Documents/audio-visualizer/node_modules/three/examples/jsm/postprocessing/UnrealBloomPass.js1755645506100309256 0
 96/home/kida/Documents/audio-visualizer/node_modules/@swc/helpers/_/_iterable_to_array_limit_loose1755645712345906914 1
-75/home/kida/Documents/audio-visualizer/dist/audio-visualizer.e02fbd41.js.map1756049982330854540 0
+75/home/kida/Documents/audio-visualizer/dist/audio-visualizer.e02fbd41.js.map1756051192021215240 0
 97/home/kida/Documents/audio-visualizer/node_modules/three/examples/jsm/postprocessing/ClearPass.js1755645505932305131 0
 108/home/kida/Documents/audio-visualizer/node_modules/three/examples/jsm/postprocessing/RenderTransitionPass.js1755645506053308103 0
 96/home/kida/Documents/audio-visualizer/node_modules/three/examples/jsm/postprocessing/SavePass.js1755645506057308201 0
