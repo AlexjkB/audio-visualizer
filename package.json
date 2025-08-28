@@ -18,6 +18,8 @@
   "homepage": "https://github.com/AlexjkB/audio-visualizer#readme",
   "description": "",
   "dependencies": {
+    "butterchurn": "^2.6.7",
+    "butterchurn-presets": "^2.4.7",
     "three": "^0.179.1",
     "wavesurfer.js": "^7.10.1"
   },

@@ -1,83 +1,82 @@
-import WaveSurfer from 'wavesurfer.js'
-import RecordPlugin from 'wavesurfer.js/dist/plugins/record.esm.js'
+// Import Butterchurn and Butterchurn presets
+import butterchurn from 'butterchurn';
+import butterchurnPresets from 'butterchurn-presets';
 
-let wavesurfer, record;
+// Get the canvas element and initialize the audio context
+const canvas = document.getElementById('visualizerCanvas');
+const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 
-const audioContext = new AudioContext();
-const analyser = audioContext.createAnalyser();
-analyser.fftSize = 1024;
-const dataArray = new Float32Array(analyser.frequencyBinCount);
+const width = window.innerWidth;
+const height = window.innerHeight;
 
-const createWaveSurfer = () => {
-  if (wavesurfer) {
-    wavesurfer.destroy();
-  }
-
-  wavesurfer = WaveSurfer.create({
-    container: '#waveform',
-    waveColor: 'rgb(200, 0, 200)',
-    progressColor: 'rgb(100, 0, 100)',
-    plugins: [
-      RecordPlugin.create({
-        renderRecordedAudio: false,
-      }),
-    ],
-  });
-
-  record = wavesurfer.registerPlugin(RecordPlugin.create());
-  record.on('record-end', (blob) => {
-    const recordedUrl = URL.createObjectURL(blob);
-  });
-
-};
-
-const micSelect = document.querySelector('#mic-select');
-RecordPlugin.getAvailableAudioDevices().then((devices) => {
-  devices.forEach((device) => {
-    const option = document.createElement('option');
-    option.value = device.deviceId;
-    option.text = device.label || device.deviceId;
-    micSelect.appendChild(option);
-  });
+// Initialize the Butterchurn visualizer
+const visualizer = butterchurn.createVisualizer(audioContext, canvas, {
+  width: width,
+  height: height
 });
 
-const recButton = document.querySelector('#record');
-recButton.onclick = () => {
-  if (record.isRecording()) {
-    record.stopRecording();
-    recButton.textContent = 'Record';
-    return;
-  }
+// Get the file input element
+const fileInput = document.getElementById('audioFileInput');
 
-  recButton.disabled = true;
+// Function to load and play the uploaded audio file
+function loadAudioFile(file) {
+    // Create an audio element and a file reader
+    const reader = new FileReader();
 
-  const deviceId = micSelect.value;
+    reader.onload = function (event) {
+        const audioData = event.target.result;
+        
+        // Decode the audio data into an AudioBuffer
+        audioContext.decodeAudioData(audioData, (buffer) => {
+            // Create a buffer source node
+            const audioSourceNode = audioContext.createBufferSource();
+            audioSourceNode.buffer = buffer;
+            
+            // Connect the audio node to the visualizer
+            visualizer.connectAudio(audioSourceNode);
 
-  record.startRecording({ deviceId }).then(() => {
-    recButton.textContent = 'Stop';
-    recButton.disabled = false;
-  });
-};
+            // Connect the audio node to the audio context's destination (speakers)
+            audioSourceNode.connect(audioContext.destination);
 
-const updateFrequencyData = () => {
-  analyser.getFloatFrequencyData(dataArray);
-  console.log(dataArray);
-  requestAnimationFrame(updateFrequencyData);
-};
+            // Load a preset from Butterchurn's preset collection
+            const presets = butterchurnPresets.getPresets();
+            const preset = presets['Flexi, martin + geiss - dedicated to the sherwin maxawow']; // Example preset
 
-const connectMicToAnalyser = (stream) => {
-  const source = audioContext.createMediaStreamSource(stream);
-  source.connect(analyser);
-  analyser.connect(audioContext.destination);
-  updateFrequencyData();
-};
+            // Load the preset into the visualizer
+            visualizer.loadPreset(preset, 0.0); // Blend to preset over 0 seconds
 
-navigator.mediaDevices.getUserMedia({ audio: true })
-  .then(connectMicToAnalyser)
-  .catch((err) => {
-    console.error('Error accessing microphone:', err);
-  });
+            // Resize the visualizer
+            visualizer.setRendererSize(window.innerWidth, window.innerHeight);
 
+            // Start the audio playback
+            audioSourceNode.start(0);
+            
+            // Start rendering the visualizer
+            animate();
+        }, (error) => {
+            console.error('Error decoding audio data:', error);
+        });
+    };
 
+    // Read the audio file as an ArrayBuffer
+    reader.readAsArrayBuffer(file);
+}
 
-createWaveSurfer();
+// Event listener to handle file uploads
+fileInput.addEventListener('change', (event) => {
+    const file = event.target.files[0];
+    if (file) {
+        loadAudioFile(file);
+    }
+});
+
+// Render function to continuously update the visualizer
+function animate() {
+    visualizer.render();
+    requestAnimationFrame(animate);
+}
+
+// Optional: Resize the visualizer dynamically on window resize
+window.addEventListener('resize', () => {
+    visualizer.setRendererSize(window.innerWidth, window.innerHeight);
+});
