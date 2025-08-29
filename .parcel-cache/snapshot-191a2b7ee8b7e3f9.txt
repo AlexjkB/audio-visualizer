@@ -1,7 +1,7 @@
 9752
-48/home/kida/Documents/audio-visualizer/index.html1756355014841380958 0
+48/home/kida/Documents/audio-visualizer/index.html1756440093082465404 0
 55/home/kida/Documents/audio-visualizer/package-lock.json1756340387785925813 0
-46/home/kida/Documents/audio-visualizer/index.js1756354904615092235 0
+46/home/kida/Documents/audio-visualizer/index.js1756440030103141416 0
 75/home/kida/Documents/audio-visualizer/node_modules/to-regex-range/README.md1755645711266884985 0
 73/home/kida/Documents/audio-visualizer/node_modules/to-regex-range/LICENSE1755645711260884863 0
 78/home/kida/Documents/audio-visualizer/node_modules/to-regex-range/package.json1755645711252884700 0
@@ -5204,7 +5204,7 @@
 81/home/kida/Documents/audio-visualizer/node_modules/core-js/modules/es6.promise.js1756340386308912438 0
 107/home/kida/Documents/audio-visualizer/node_modules/@parcel/runtime-js/src/helpers/browser/preload-loader.js1755645712046900841 0
 87/home/kida/Documents/audio-visualizer/node_modules/core-js/modules/es6.string.anchor.js1756340386351912827 0
-71/home/kida/Documents/audio-visualizer/dist/audio-visualizer.e02fbd41.js1756354904768132537 0
+71/home/kida/Documents/audio-visualizer/dist/audio-visualizer.e02fbd41.js1756440079164393767 0
 79/home/kida/Documents/audio-visualizer/node_modules/core-js/fn/array/iterator.js1756340386688915880 0
 97/home/kida/Documents/audio-visualizer/node_modules/@parcel/core/src/requests/AssetGraphRequest.js1755645712256905107 0
 115/home/kida/Documents/audio-visualizer/node_modules/butterchurn-presets/presets/converted/martin - the Dome ps2.json1756340387042919086 0
@@ -5292,7 +5292,7 @@
 64/home/kida/Documents/audio-visualizer/node_modules/lodash/lte.js1756340386328912619 0
 116/home/kida/Documents/audio-visualizer/node_modules/@parcel/core/test/fixtures/library-custom-scopehoist/package.json1755645712505910165 0
 72/home/kida/Documents/audio-visualizer/node_modules/node-addon-api/napi.h1755645711469889112 0
-75/home/kida/Documents/audio-visualizer/dist/audio-visualizer.e02fbd41.js.map1756354904776134645 0
+75/home/kida/Documents/audio-visualizer/dist/audio-visualizer.e02fbd41.js.map1756440079186393880 0
 97/home/kida/Documents/audio-visualizer/node_modules/three/examples/jsm/postprocessing/ClearPass.js1755645505932305131 0
 91/home/kida/Documents/audio-visualizer/node_modules/babel-runtime/core-js/string/trim-end.js1756340385774907600 0
 108/home/kida/Documents/audio-visualizer/node_modules/three/examples/jsm/postprocessing/RenderTransitionPass.js1755645506053308103 0
@@ -5300,7 +5300,7 @@
 83/home/kida/Documents/audio-visualizer/node_modules/core-js/modules/es6.math.sinh.js1756340386265912048 0
 134/home/kida/Documents/audio-visualizer/node_modules/butterchurn-presets/presets/converted/flexi + geiss - tokamak fallout repellor.json1756340386670915717 0
 127/home/kida/Documents/audio-visualizer/node_modules/butterchurn-presets/presets/converted/Eo.S. + Phat - chasers 18 hallway.json1756340386355912864 0
-53/home/kida/Documents/audio-visualizer/dist/index.html1756355014954405320 0
+53/home/kida/Documents/audio-visualizer/dist/index.html1756440093158465795 0
 74/home/kida/Documents/audio-visualizer/node_modules/dotenv-expand/config.js1755645711544890636 0
 75/home/kida/Documents/audio-visualizer/node_modules/postcss-value-parser/lib1755645711298885636 1
 79/home/kida/Documents/audio-visualizer/node_modules/@parcel/events/lib/errors.js1755645712091901755 0
@@ -9692,7 +9692,7 @@
 90/home/kida/Documents/audio-visualizer/node_modules/core-js/library/modules/es6.date.now.js1756340386218911623 0
 90/home/kida/Documents/audio-visualizer/node_modules/@parcel/rust-linux-x64-gnu/package.json1755645711342886530 0
 96/home/kida/Documents/audio-visualizer/node_modules/core-js/library/modules/es6.array.index-of.js1756340386195911414 0
-42/home/kida/Documents/audio-visualizer/dist1756355014956405751 1
+42/home/kida/Documents/audio-visualizer/dist1756440093159465800 1
 90/home/kida/Documents/audio-visualizer/node_modules/three/examples/jsm/loaders/PDBLoader.js1755645506029307514 0
 92/home/kida/Documents/audio-visualizer/node_modules/core-js/library/modules/es7.observable.js1756340386433913570 0
 92/home/kida/Documents/audio-visualizer/node_modules/core-js/library/modules/es6.math.trunc.js1756340386267912067 0
